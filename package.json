@@ -1,0 +1,19 @@
+{
+  "name": "lister-api",
+  "version": "1.0.0",
+  "description": "API for lister app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "William Powell",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
