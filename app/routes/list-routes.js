@@ -19,7 +19,7 @@ module.exports = function(app, db) {
   app.post('/lists', (request, response) => {
     const list = {
       title: request.body.title,
-      text: request.body.body
+      text: request.body.text
     };
 
     col.insertOne(list, (err, result) => {
@@ -74,7 +74,6 @@ module.exports = function(app, db) {
         console.error('delete error:', err);
         response.send({ error: 'Bummer, an error occurred' });
       } else {
-        console.log(result.deletedCount);
         response.send(`${result.deletedCount} deleted`);
       }
     });
