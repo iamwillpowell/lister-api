@@ -3,6 +3,7 @@ const ObjectID = require('mongodb').ObjectID;
 module.exports = function(app, db) {
   const col = db.collection('lists');
 
+  // GET All
   app.get('/lists/', (request, response) => {
     col.find().toArray((err, result) => {
       if (err) {
@@ -12,7 +13,6 @@ module.exports = function(app, db) {
         response.send(result);
       }
     });
-
   });
 
   // POST
@@ -52,7 +52,7 @@ module.exports = function(app, db) {
     const details = { _id: ObjectID(id) };
     const note = {
       title: request.body.title,
-      text: request.body.body
+      text: request.body.text
     };
     col.update(details, note, (err, result) => {
       if (err) {
