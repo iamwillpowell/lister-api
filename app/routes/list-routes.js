@@ -19,7 +19,8 @@ module.exports = function(app, db) {
   app.post('/lists', (request, response) => {
     const list = {
       title: request.body.title,
-      text: request.body.text
+      text: request.body.text,
+      items: request.body.items
     };
 
     col.insertOne(list, (err, result) => {
@@ -52,7 +53,8 @@ module.exports = function(app, db) {
     const details = { _id: ObjectID(id) };
     const note = {
       title: request.body.title,
-      text: request.body.text
+      text: request.body.text,
+      items: request.body.items
     };
     col.update(details, note, (err, result) => {
       if (err) {
